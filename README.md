@@ -48,37 +48,3 @@ $ source .env; CHAIN=sepolia forge script script/TokenDeploy.s.sol --rpc-url $RP
 
 $ source .env; CHAIN=sepolia forge script script/DisperseTokens.s.sol --rpc-url $RPC_URL_SEPOLIA --broadcast --chain-id 11155111 --verify -vvvv
 ```
-
-## Steps
-
-1. deploy Token.sol
-    - change names in all contracts
-    - change symbol and name
-    - remove burnFrom function
-2. Generate new addresses - simps-websockets/uniswap
-3. Update addresses in automated market maker
-    - delete all .env in vercel
-    - upload new list of address in vercel .env.addresses
-4. Distribut eth to snipe wallets
-    - change private key in .env for simps-websocket
-    - change public and private keys of snipes
-
-5. Update all snipe servers
-    - send new version of .env with new token address and public / private keys
-    - ssh to each server. pm2 delete all; cd uniswap; pm2 start ecosystem-uniswap-websocket.config.js
-
-400_000_000
-400000000 lp
-3eth == buys you 290m = 110m left in pool
-
-
-4eth === buys you 330m = 70m left in pool
-
-2.5% = 0.56eth
-
-3eth pool = 0.56842 sell pressure
-4eth pool = 1 eth of sell pressure
-
-0.5e = 13,273,491
-0.5e = 10,417,347
-
